@@ -58,10 +58,10 @@ class BackeryService
     end
     puts "#{pack} #{order_code} $#{order_cost.round(2)}"
     order_packs.each_pair do |packs, count|
-      puts "#{count} x #{packs} #{available_packages[packs]}"
+      puts "  #{count} x #{packs} $#{available_packages[packs]}"
     end
   end
 end
 
-s = "10 VS5\n\n14 MB11\n\n25 CF\n\n28 CF\n13 CF"
-BackeryService.new(s).call
+order = "10 VS5\n\n14 MB11\n\n13 CF\n\n28 CF\n25 VS5"
+BackeryService.new(order).call
